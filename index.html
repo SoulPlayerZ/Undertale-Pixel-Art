@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href='images/sans-icon.jpg'>
+</head>
+<body>
+  <header>
+    <img src="images/Undertale-Logo.png" id='logo'>
+  </header>   
+  <section id='sub'>
+    <div id='theme'>Theme:
+      <select id='char'>
+        <option value="sans">Sans</option>
+        <option value="papyrus">Papyrus</option>
+        <option value="napstablook">Napstablook</option>
+        <option value="muffet">Muffet</option>
+        <option value="mettaton">Mettaton</option>
+        <option value="mettatonEX">Mettaton EX</option>
+        <option value="undyne">Undyne</option>
+        <option value="undyneG">Undyne Genocide</option>
+        <option value="toriel">Toriel</option>
+        <option value="asgore">Asgore</option>
+        <option value="asriel">Asriel</option>
+        <option value="asriel-final-form">Asriel Final Form</option>
+      </select>
+    </div> 
+    <h1 id="title">Pixel Art</h1>
+    <p></p>
+  </section>    
+  <div id='container-audio'>
+    <audio autoplay loop id="audio">
+      <source id='src-music' src=''>
+        Your browser does not support the audio element.
+    </audio>  
+  </div>
+  <main>
+    <img src='images/sans.gif' class="main-image">
+
+    <section class='input-menu'>
+      <button id='clear-board'><img class='clear-btn-image' src='images/Clear-All-Icon.png'>CLEAR</button>
+      <button id='erase'><img class='erase-btn-image' src='images/borracha-laranja.png'>ERASE</button>
+      <button id='erasing'><img class='erasing-img' src='images/borracha-laranja.png'>ERASE</button>
+    <label for='new-input-color'>
+     <input type="color" id='new-input-color' name='input-color' value="#2104FB" class='selected'>COLOR
+    </label>
+    <button id="generate-board"><img class='resize-btn-image' src='images/resize-icon.png'>SIZE<input id='input-number' type="number" min='8' max='32' value='12'></button>
+       <!--  <input id="board-size" type="range" name="geradorDeMesa" min='8' max='32'> -->
+           <!-- oninput="validity.valid||(value='');'" impede que seja inserido manualmente valores que não estejam enter min e max. 
+          Visto em: https://pt.stackoverflow.com/questions/305012/como-impedir-que-o-numero-seja-menor-ou-igual-a-0-num-input-type-number -->
+    </section>   
+    <div id='pixel-board'></div>     
+  </main>  
+  <footer class="footer">
+        <p> Desenvolvido por: Wellinton Fonseca (SoulPlayerZ)</p>
+      <div class='social'>  
+        <a href='https://www.instagram.com/Thyrsokof/' target='_blank'><img src='images/insta-icon.png' class='social-icons'></a>
+        <a href='https://www.twitch.tv/soulplayer_z' target='_blank'><img src='images/twitch-icon.png' class='social-icons twitch'></a>
+        <a href='https://www.instagram.com/soulplayerz/' target='_blank'><img src='images/insta-icon.png' class='social-icons'></a>
+      </div>
+      <img src='images/papyrus-speak-1.png' class='papyrus'>
+  </footer>
+    <script src="script.js"></script>
+    <script src="//cdn.rawgit.com/namuol/cheet.js/master/cheet.min.js"
+        type="text/javascript"></script>
+</body>
+</html>
+

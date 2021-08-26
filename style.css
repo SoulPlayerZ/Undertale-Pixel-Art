@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    color:rgb(255, 255, 255)
+}
+#sub{
+    display: none;
+    justify-content: space-between;
+}
+#theme {
+    margin-left: 60px;
+    font-size: 20px;
+    font-family: undertale;
+    color: white;
+}
+select{
+    width: 150px;
+}
+
+@font-face {
+    font-family: undertale;
+    src: url(DTM/DTM-Sans.otf);
+ }
+
+@font-face {
+    font-family: undertale-fight;
+    src: url(Undertale-Fight/MERCY.otf)
+}
+
+.color{
+    border:  1px solid black;
+    display: inline-block;
+    padding: 20px;
+    margin-right: 10px;
+}
+header {
+    margin-top: 400px;
+    display: none;
+    justify-content: center;
+}
+
+#logo {
+    width: 650px;
+}
+h1{
+    margin-right: 250px;
+    font-size: 50px;
+    font-family: undertale;
+    color: white;
+}
+
+main{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-menu{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#input-number {
+    padding: 2px;
+    margin-left: 2px;
+}
+#clear-board, #erase, #generate-board, label{
+    display: flex;
+    align-items: center;
+    font-family: undertale-fight;
+    font-size: 32px;
+    padding: 8px;
+    color: rgb(224, 107, 22);
+    background-color: black;
+    border: 2px solid rgb(224, 107, 22);
+    margin-right: 15px;
+
+}
+
+#erasing{
+    display: none;
+    background-color: black;
+    color: yellow  ;
+    border: 2px solid yellow;
+    align-items: center;
+    font-family: undertale-fight;
+    font-size: 32px;
+    padding: 8px;
+    background-color: black;
+    margin-right: 10px;
+} 
+
+#clear-board:hover, #erase:hover, #generate-board:hover, label:hover {
+    color: yellow;
+    border: 2px solid yellow;
+}
+.erasing-img{
+    width: 27px;
+    margin-right: 10px;
+    margin-left: 8px;
+    margin-top: 5px;
+}
+
+.clear-btn-image, .erase-btn-image, .resize-btn-image{
+    width: 35px;
+    margin-top: 5px;
+    margin-right: 10px;
+    border: black;
+}
+
+#container-audio {
+    display: flex;
+    justify-content: center; 
+}
+
+
+.pixel{
+    border:  1px solid black;
+    display: inline-block;
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    height: 20px;
+    width: 20px;
+}
+.col{
+    height: 30px;
+}
+.main-image {
+    margin-top: 20px;
+    width: 120px;
+}
+
+
+#pixel-board{
+   border: 15px groove rgb(110, 110, 110); 
+   cursor: url(images/sans-genocide-cursor.png), auto;
+} 
+
+input{
+    max-width: 200px;
+    max-height: 200px;
+    margin-right: 8px;
+}
+
+footer{
+    display: none;
+    position: relative;
+    flex-flow: column wrap;
+    margin-top: 20px;
+    border: 5px solid  white;
+    height: 150px;
+    top: 170px;
+   
+
+}
+
+footer p{
+    margin-top: 20px;
+    margin-left: 10px;
+    font-family: undertale;
+}
+
+footer h4{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: undertale;
+}
+
+.social{
+    display: flex;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: yellow;
+}
+
+.social-icons {
+    width: 50px;
+    margin-right: 20px;
+    margin-top: 20px;  
+    margin-left: 15px;
+}
+
+.papyrus {
+    margin-top: 8px;
+    margin-right: 150px;
+    align-self: flex-end;
+    width: 250px;
+}
+
