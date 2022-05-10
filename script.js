@@ -1,24 +1,27 @@
+const sectionSub = document.querySelector('#sub');
+const main = document.querySelector('main');
+const footer = document.querySelector('footer');
+const papyrusSpeak = document.querySelector('.papyrus');
+const board = document.getElementById('pixel-board');
+const imgFakeEraseBtn = document.querySelector('.erasing-img');
+const p = document.querySelector('p');
+const clearButton = document.getElementById('clear-board');
+const textoH1 = document.getElementById('title');
+const eraseButton = document.getElementById('erase');
+const header = document.querySelector('header');
+const colorBtn = document.querySelector('#new-input-color');
+const fakeErase = document.querySelector('#erasing');
+const generateBoardButton = document.getElementById("generate-board");
+const boardInputNumber = document.getElementById('input-number');
+const logoImage = document.getElementById('logo');
+const divSelect = document.getElementById('theme');
+let printed = false;
+const select = document.getElementById('char');
 
-window.onload = function colorsPalet(){
-  const sectionSub = document.querySelector('#sub');
-  const main = document.querySelector('main');
-  const footer = document.querySelector('footer');
-  const papyrusSpeak = document.querySelector('.papyrus');
-  const board = document.getElementById('pixel-board');
-  const imgFakeEraseBtn = document.querySelector('.erasing-img');
-  const p = document.querySelector('p');
-  const clearButton = document.getElementById('clear-board');
-  const textoH1 = document.getElementById('title');
-  const eraseButton = document.getElementById('erase');
-  const header = document.querySelector('header');
-  const colorBtn = document.querySelector('#new-input-color');
-  const fakeErase = document.querySelector('#erasing');
-  const generateBoardButton = document.getElementById("generate-board");
-  const boardInputNumber = document.getElementById('input-number');
-  const logoImage = document.getElementById('logo');
-  const divSelect = document.getElementById('theme');
-  let printed = false;
-  const select = document.getElementById('char');
+window.onload = function main () {
+  intro();
+  boardByInputNumber(12);
+}
 
   /* const audioVolume = document.getElementById('audio'); */
   audio.volume = 0.3;
@@ -45,7 +48,6 @@ window.onload = function colorsPalet(){
       audio.src = 'megalovania.mp3'
     }, 6000);
   }
-  intro();
 
   function selectSecretLink(event) {
     event.target.style.color = 'yellow';
@@ -182,7 +184,7 @@ window.onload = function colorsPalet(){
 
 
 
-  function boardForInputNumber(input){
+  function boardByInputNumber(input){
     const board = document.getElementById('pixel-board');
     const select = document.getElementById('char');
     if (select.value === 'sans') {
@@ -219,14 +221,14 @@ window.onload = function colorsPalet(){
   function limitingBoard(input) {
     if (input <= 8) {
       deleteBoard();
-    return boardForInputNumber(8);
+    return boardByInputNumber(8);
     }
     if (input >= 32) {
       deleteBoard();
-      return boardForInputNumber(32);
+      return boardByInputNumber(32);
     } else {
       deleteBoard();
-      return boardForInputNumber(input);
+      return boardByInputNumber(input);
     }
   } 
 
@@ -487,8 +489,6 @@ window.onload = function colorsPalet(){
     }  
   })
 
-  boardForInputNumber(12);
-
   boardInputNumber.addEventListener('change', () => {
     deleteBoard();
     limitingBoard(boardInputNumber.value);
@@ -711,9 +711,4 @@ function theme() {
 }
 
   select.addEventListener('change', theme);
-
-}
-
-
-
 
