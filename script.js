@@ -4,9 +4,9 @@ const footer = document.querySelector('footer');
 const papyrusSpeak = document.querySelector('.papyrus');
 const board = document.getElementById('pixel-board');
 const imgFakeEraseBtn = document.querySelector('.erasing-img');
-const p = document.querySelector('p');
+const span = document.querySelector('span');
 const clearButton = document.getElementById('clear-board');
-const textoH1 = document.getElementById('title');
+const title = document.getElementById('title');
 const eraseButton = document.getElementById('erase');
 const header = document.querySelector('header');
 const colorBtn = document.querySelector('#new-input-color');
@@ -477,7 +477,7 @@ function theme() {
     }
     logoImage.src = 'images/Undertale-Logo.png';
     logoImage.style.width = '650px';
-    textoH1.style.display = 'inline';
+    title.style.display = 'inline';
     document.body.style.backgroundColor = 'black';
     audio.src = 'megalovania.mp3'; 
     audio.volume = 0.1;
@@ -493,7 +493,7 @@ function theme() {
     }
     logoImage.src = 'images/Undertale-Logo.png';
     logoImage.style.width = '650px';
-    textoH1.style.display = 'inline';
+    title.style.display = 'inline';
     document.body.style.backgroundColor = 'black';
     audio.src = 'spear-of-justice.mp3';
     audio.volume = 0.1;
@@ -509,7 +509,7 @@ function theme() {
     }
     logoImage.src = 'images/Undertale-Logo.png';
     logoImage.style.width = '650px';
-    textoH1.style.display = 'inline';
+    title.style.display = 'inline';
     document.body.style.backgroundColor = 'black';
     audio.src = 'heartache.mp3';
     audio.volume = 0.1;
@@ -525,7 +525,7 @@ function theme() {
     }
     logoImage.src = 'images/Undertale-Logo.png';
     logoImage.style.width = '650px';
-    textoH1.style.display = 'inline';
+    title.style.display = 'inline';
     document.body.style.backgroundColor = 'black';
     audio.src = 'asgore-theme.mp3';
     audio.volume = 0.1;
@@ -541,7 +541,7 @@ function theme() {
     }
     logoImage.src = 'images/Undertale-Logo.png';
     logoImage.style.width = '650px';
-    textoH1.style.display = 'inline';
+    title.style.display = 'inline';
     document.body.style.backgroundColor = 'black';
     audio.src = 'asriel-theme.mp3';
     audio.volume = 0.1;
@@ -553,7 +553,7 @@ function theme() {
   image.style.width = '450px'
   logoImage.src = 'images/Undertale-Logo.png';
   logoImage.style.width = '650px';
-  textoH1.style.display = 'inline';
+  title.style.display = 'inline';
   board.style.cursor = 'url(images/flowey-cursor.png), auto';
   if (fakeErase.style.display === 'flex') {
     board.style.cursor = 'url(images/rubber-icon.png), auto'
@@ -573,7 +573,7 @@ function theme() {
   }
   logoImage.src = 'images/Undertale-Logo.png';
   logoImage.style.width = '650px';
-  textoH1.style.display = 'inline';
+  title.style.display = 'inline';
   document.body.style.backgroundColor = 'black';
   audio.src = 'mettaton-theme.mp3';
   audio.volume = 0.1;
@@ -589,7 +589,7 @@ function theme() {
   }
   logoImage.src = 'images/Undertale-Logo.png';
   logoImage.style.width = '650px';
-  textoH1.style.display = 'inline';
+  title.style.display = 'inline';
   document.body.style.backgroundColor = 'black';
   audio.src = 'mettaton-ex-theme.mp3';
   audio.volume = 0.1;
@@ -605,7 +605,7 @@ function theme() {
   }
   logoImage.src = 'images/Undertale-Logo.png';
   logoImage.style.width = '650px';
-  textoH1.style.display = 'inline';
+  title.style.display = 'inline';
   document.body.style.backgroundColor = 'black';
   audio.src = 'napstablook-theme.mp3';
   audio.volume = 0.1;
@@ -621,7 +621,7 @@ function theme() {
   }
   logoImage.src = 'images/Undertale-Logo.png';
   logoImage.style.width = '650px';
-  textoH1.style.display = 'inline';
+  title.style.display = 'inline';
   document.body.style.backgroundColor = 'black';
   audio.src = 'undyne-genocide.mp3';
   audio.volume = 0.1;
@@ -637,7 +637,7 @@ function theme() {
   }
   logoImage.src = 'images/Undertale-Logo.png';
   logoImage.style.width = '650px';
-  textoH1.style.display = 'inline';
+  title.style.display = 'inline';
   document.body.style.backgroundColor = 'black';
   audio.src = 'papyrus-theme.mp3';
   audio.volume = 0.1;
@@ -652,7 +652,7 @@ function theme() {
   if (fakeErase.style.display === 'flex') {
     board.style.cursor = 'url(images/rubber-icon.png), auto'
   }
-  textoH1.style.display = 'inline';
+  title.style.display = 'inline';
   logoImage.src = 'images/Undertale-Logo.png';
   logoImage.style.width = '650px';
   audio.src = 'muffet-theme.mp3';
@@ -664,7 +664,7 @@ function theme() {
   secretBtn.innerText = 'TWITCH';
   image.src = 'images/bloood.gif';
   image.style.width = '190px'
-  textoH1.style.display = 'none';
+  title.style.display = 'none';
   document.body.style.backgroundColor = 'rgb(173, 62, 62)';
   logoImage.src = 'images/blood-logo.png'
   logoImage.style.padding = '2px';
@@ -681,38 +681,30 @@ function theme() {
 
   select.addEventListener('change', theme);
 
-  function enableCheat() {
-    cheet('↑ ↑ ↓ ↓ ← → ← → b a', () => {
-      alert(` Congratulations!\n
-      -- Cheat Enabled -- \n
-      Try a Sans fight by clicking FIGHT SANS or 
-      typing 'blood rain' to unlock a new theme.`);
-      cheet('b l o o d r a i n', blooodRainTheme);
-      papyrusSpeak.src = 'images/papyrus-speak-2.png';
-      const link = document.createElement('a');
-      link.href ='https://jcw87.github.io/c2-sans-fight/';
-      link.target ='_blank';
-      link.innerText = 'FIGHT SANS';
-      link.id = 'secret-btn';
-      link.style.textDecoration = 'none';
-      link.style.backgroundColor = 'black';
-      link.style.fontSize = '32px';
-      link.style.fontFamily = 'undertale-fight';
-      link.style.color = 'rgb(224, 107, 22)';
-      link.style.border = '2px solid rgb(224, 107, 22)';
-      link.style.padding = '5px';
-      link.addEventListener('mouseover', selectSecretLink);
-      p.appendChild(link);
-      textoH1.style.marginLeft = '284px';
-      p.style.marginRight = '40px';  
-      cheet.disable('↑ ↑ ↓ ↓ ← → ← → b a');
-    })
-  }
+function enableCheat() {
+  cheet('↑ ↑ ↓ ↓ ← → ← → b a', () => {
+    alert(` Congratulations!\n
+    -- Cheat Enabled -- \n
+    Try a Sans fight by clicking FIGHT SANS or 
+    typing 'blood rain' to unlock a new theme.`);
+    cheet('b l o o d r a i n', blooodRainTheme);
+    papyrusSpeak.src = 'images/papyrus-speak-2.png';
+    const sansFightBtn = document.createElement('a');
+    sansFightBtn.href ='https://jcw87.github.io/c2-sans-fight/';
+    sansFightBtn.target ='_blank';
+    sansFightBtn.innerText = 'FIGHT SANS';
+    sansFightBtn.id = 'sansFight-btn';
+    sansFightBtn.addEventListener('mouseover', selectSecretLink);
+    span.appendChild(sansFightBtn);
+    title.style.marginLeft = '284px';
+    cheet.disable('↑ ↑ ↓ ↓ ← → ← → b a');
+  })
+}
 
-  window.onload = function main () {
-    intro();
-    generateBoardByInputNumber(12);
-    enableCheat();
-  }
-  
+window.onload = function main () {
+  intro();
+  generateBoardByInputNumber(12);
+  enableCheat();
+}
+
 
