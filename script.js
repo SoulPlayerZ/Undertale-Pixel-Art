@@ -57,7 +57,7 @@ const select = document.getElementById('char');
     }
   });
 
-  function boardByInputNumber(input){
+  function generateBoardByInputNumber(input){
     const board = document.getElementById('pixel-board');
     const select = document.getElementById('char');
     if (select.value === 'sans') {
@@ -190,14 +190,14 @@ const select = document.getElementById('char');
   function limitingBoard(input) {
     if (input <= 8) {
       deleteBoard();
-    return boardByInputNumber(8);
+    return generateBoardByInputNumber(8);
     }
     if (input >= 32) {
       deleteBoard();
-      return boardByInputNumber(32);
+      return generateBoardByInputNumber(32);
     } else {
       deleteBoard();
-      return boardByInputNumber(input);
+      return generateBoardByInputNumber(input);
     }
   } 
 
@@ -711,7 +711,7 @@ function theme() {
 
   window.onload = function main () {
     intro();
-    boardByInputNumber(12);
+    generateBoardByInputNumber(12);
     enableCheat();
   }
   
