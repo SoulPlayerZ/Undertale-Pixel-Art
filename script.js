@@ -18,18 +18,14 @@ const divSelect = document.getElementById('theme');
 let printed = false;
 const select = document.getElementById('char');
 
-window.onload = function main () {
-  intro();
-  boardByInputNumber(12);
-}
-
   /* const audioVolume = document.getElementById('audio'); */
-  audio.volume = 0.3;
+  // audio.volume = 0.3;
   // referência de como alterar volume do audio.
   //https://stackoverflow.com/questions/33747398/html-audio-tag-volume
   //Não precisei da const audioVolume ? Oo
   
   function intro() {
+    audio.volume = 0.3;
     setTimeout(() => {
       header.style.display = 'flex';
       header.style.marginTop = '400px';
@@ -49,15 +45,6 @@ window.onload = function main () {
     }, 6000);
   }
 
-  function selectSecretLink(event) {
-    event.target.style.color = 'yellow';
-    event.target.style.border = '2px solid yellow';
-    event.target.addEventListener('mouseleave', (event) => {
-      event.target.style.color = 'rgb(224, 107, 22)';
-      event.target.style.border = '2px solid rgb(224, 107, 22)';
-    })
-  }
-
   colorBtn.addEventListener('click', () => {
     fakeErase.style.display = 'none';
     eraseButton.style.display = 'flex';
@@ -69,6 +56,51 @@ window.onload = function main () {
       board.style.cursor = 'url(images/flowey-cursor.png), auto'
     }
   });
+
+  function boardByInputNumber(input){
+    const board = document.getElementById('pixel-board');
+    const select = document.getElementById('char');
+    if (select.value === 'sans') {
+      board.style.cursor = 'url(images/sans-genocide-cursor.png), auto';
+    }else if (select.value === 'bloood') {
+      board.style.cursor = 'url(images/itachi-sharingan.png), auto';
+    }else {
+      board.style.cursor = 'url(images/flowey-cursor.png), auto'
+    }
+    for (indexColumn = 1; indexColumn  <= input; indexColumn  += 1) {
+      let column = document.createElement('div');
+      board.appendChild(column);
+      column.className = 'col';             
+      for (indexRow = 1; indexRow <= input; indexRow += 1) {
+        let row = document.createElement('div');
+        row.className = "pixel";
+        row.addEventListener('mousedown', paintingBoard);  
+        column.appendChild(row);
+      }   
+    }
+    colorBtn.addEventListener('click', () => {
+      fakeErase.style.display = 'none';
+      eraseButton.style.display = 'flex';
+      if (select.value === 'sans') {
+        board.style.cursor = 'url(images/sans-genocide-cursor.png), auto';
+      }else if (select.value === 'bloood') {
+        board.style.cursor = 'url(images/itachi-sharingan.png), auto';
+      }else {
+        board.style.cursor = 'url(images/flowey-cursor.png), auto'
+      }
+    });
+  } 
+
+
+  function selectSecretLink(event) {
+    event.target.style.color = 'yellow';
+    event.target.style.border = '2px solid yellow';
+    event.target.addEventListener('mouseleave', (event) => {
+      event.target.style.color = 'rgb(224, 107, 22)';
+      event.target.style.border = '2px solid rgb(224, 107, 22)';
+    })
+  }
+
 
   generateBoardButton.addEventListener('change', () => {
     fakeErase.style.display = 'none';
@@ -154,69 +186,6 @@ window.onload = function main () {
     select.appendChild(blooodTheme);
     cheet.disable('b l o o d r a i n');
   }
-  
-
-  cheet('↑ ↑ ↓ ↓ ← → ← → b a', () => {
-    alert(` Congratulations!\n
-    -- Cheat Enabled -- \n
-     Try a Sans fight by clicking FIGHT SANS or 
-     typing 'blood rain' to unlock a new theme.`);
-    cheet('b l o o d r a i n', blooodRainTheme);
-    papyrusSpeak.src = 'images/papyrus-speak-2.png';
-    const link = document.createElement('a');
-    link.href ='https://jcw87.github.io/c2-sans-fight/';
-    link.target ='_blank';
-    link.innerText = 'FIGHT SANS';
-    link.id = 'secret-btn';
-    link.style.textDecoration = 'none';
-    link.style.backgroundColor = 'black';
-    link.style.fontSize = '32px';
-    link.style.fontFamily = 'undertale-fight';
-    link.style.color = 'rgb(224, 107, 22)';
-    link.style.border = '2px solid rgb(224, 107, 22)';
-    link.style.padding = '5px';
-    link.addEventListener('mouseover', selectSecretLink);
-    p.appendChild(link);
-    textoH1.style.marginLeft = '284px';
-    p.style.marginRight = '40px';  
-    cheet.disable('↑ ↑ ↓ ↓ ← → ← → b a');
-  })
-
-
-
-  function boardByInputNumber(input){
-    const board = document.getElementById('pixel-board');
-    const select = document.getElementById('char');
-    if (select.value === 'sans') {
-      board.style.cursor = 'url(images/sans-genocide-cursor.png), auto';
-    }else if (select.value === 'bloood') {
-      board.style.cursor = 'url(images/itachi-sharingan.png), auto';
-    }else {
-      board.style.cursor = 'url(images/flowey-cursor.png), auto'
-    }
-    for (indexColumn = 1; indexColumn  <= input; indexColumn  += 1) {
-      let column = document.createElement('div');
-      board.appendChild(column);
-      column.className = 'col';             
-      for (indexRow = 1; indexRow <= input; indexRow += 1) {
-        let row = document.createElement('div');
-        row.className = "pixel";
-        row.addEventListener('mousedown', paintingBoard);  
-        column.appendChild(row);
-      }   
-    }
-    colorBtn.addEventListener('click', () => {
-      fakeErase.style.display = 'none';
-      eraseButton.style.display = 'flex';
-      if (select.value === 'sans') {
-        board.style.cursor = 'url(images/sans-genocide-cursor.png), auto';
-      }else if (select.value === 'bloood') {
-        board.style.cursor = 'url(images/itachi-sharingan.png), auto';
-      }else {
-        board.style.cursor = 'url(images/flowey-cursor.png), auto'
-      }
-    });
-  } 
 
   function limitingBoard(input) {
     if (input <= 8) {
@@ -711,4 +680,39 @@ function theme() {
 }
 
   select.addEventListener('change', theme);
+
+  function enableCheat() {
+    cheet('↑ ↑ ↓ ↓ ← → ← → b a', () => {
+      alert(` Congratulations!\n
+      -- Cheat Enabled -- \n
+      Try a Sans fight by clicking FIGHT SANS or 
+      typing 'blood rain' to unlock a new theme.`);
+      cheet('b l o o d r a i n', blooodRainTheme);
+      papyrusSpeak.src = 'images/papyrus-speak-2.png';
+      const link = document.createElement('a');
+      link.href ='https://jcw87.github.io/c2-sans-fight/';
+      link.target ='_blank';
+      link.innerText = 'FIGHT SANS';
+      link.id = 'secret-btn';
+      link.style.textDecoration = 'none';
+      link.style.backgroundColor = 'black';
+      link.style.fontSize = '32px';
+      link.style.fontFamily = 'undertale-fight';
+      link.style.color = 'rgb(224, 107, 22)';
+      link.style.border = '2px solid rgb(224, 107, 22)';
+      link.style.padding = '5px';
+      link.addEventListener('mouseover', selectSecretLink);
+      p.appendChild(link);
+      textoH1.style.marginLeft = '284px';
+      p.style.marginRight = '40px';  
+      cheet.disable('↑ ↑ ↓ ↓ ← → ← → b a');
+    })
+  }
+
+  window.onload = function main () {
+    intro();
+    boardByInputNumber(12);
+    enableCheat();
+  }
+  
 
