@@ -50,8 +50,6 @@ const select = document.getElementById('char');
     eraseButton.style.display = 'flex';
     if (select.value === 'sans') {
       board.style.cursor = 'url(images/sans-genocide-cursor.png), auto';
-    }else if (select.value === 'bloood') {
-      board.style.cursor = 'url(images/itachi-sharingan.png), auto';
     }else {
       board.style.cursor = 'url(images/flowey-cursor.png), auto'
     }
@@ -62,8 +60,6 @@ const select = document.getElementById('char');
     const select = document.getElementById('char');
     if (select.value === 'sans') {
       board.style.cursor = 'url(images/sans-genocide-cursor.png), auto';
-    }else if (select.value === 'bloood') {
-      board.style.cursor = 'url(images/itachi-sharingan.png), auto';
     }else {
       board.style.cursor = 'url(images/flowey-cursor.png), auto'
     }
@@ -83,8 +79,6 @@ const select = document.getElementById('char');
       eraseButton.style.display = 'flex';
       if (select.value === 'sans') {
         board.style.cursor = 'url(images/sans-genocide-cursor.png), auto';
-      }else if (select.value === 'bloood') {
-        board.style.cursor = 'url(images/itachi-sharingan.png), auto';
       }else {
         board.style.cursor = 'url(images/flowey-cursor.png), auto'
       }
@@ -107,8 +101,6 @@ const select = document.getElementById('char');
     eraseButton.style.display = 'flex';
     if (select.value === 'sans') {
       board.style.cursor = 'url(images/sans-genocide-cursor.png), auto';
-    }else if (select.value === 'bloood') {
-      board.style.cursor = 'url(images/itachi-sharingan.png), auto';
     }else {
       board.style.cursor = 'url(images/flowey-cursor.png), auto'
     }
@@ -132,9 +124,6 @@ const select = document.getElementById('char');
       if (select.value === 'muffet') {
         imgFakeEraseBtn.src = 'images/muffet-soul.png';
       }
-      if (select.value === 'bloood') {
-        imgFakeEraseBtn.src = 'images/sharingan3.png';
-      }
       if ((select.value === 'asriel-final-form') || (select.value === 'asriel')
        (select.value === 'asgore') || (select.value === 'toriel')
        (select.value === 'napstablook')) {
@@ -157,9 +146,6 @@ const select = document.getElementById('char');
         if (select.value === 'muffet') {
           imgFakeEraseBtn.src = 'images/muffet-soul.png';
         }
-        if (select.value === 'bloood') {
-          imgFakeEraseBtn.src = 'images/sharingan3.png';
-        }
         if ((select.value === 'asriel-final-form') || (select.value === 'asriel')
          (select.value === 'asgore') || (select.value === 'toriel')
          (select.value === 'napstablook')) {
@@ -168,24 +154,6 @@ const select = document.getElementById('char');
       }
     }
   });
-
-  function blooodRainTheme() { 
-    const enableSound = document.createElement('audio');
-    papyrusSpeak.style.display = 'none';
-    const sound = document.getElementById('container-audio');
-    enableSound.src = 'bloood-enable.mp3';
-    const audioVolume = document.getElementById('audio');
-    audioVolume.volume = 0;
-    enableSound.volume = 0.4;
-    sound.appendChild(enableSound);
-    enableSound.play();  
-    const blooodTheme = document.createElement('option');
-    blooodTheme.value = 'bloood';
-    blooodTheme.id = 'bloood';
-    blooodTheme.innerText = 'Bloood Rain';
-    select.appendChild(blooodTheme);
-    cheet.disable('b l o o d r a i n');
-  }
 
   function limitingBoard(input) {
     if (input <= 8) {
@@ -305,16 +273,6 @@ const select = document.getElementById('char');
         iconButton.style.width = '35px';
         iconButton.style.marginLeft = '0px';
       });
-    }else if (select.value === 'bloood') {
-      iconButton.src = 'images/sharingan3.png';
-      iconButton.style.width = '27px';
-      iconButton.style.marginLeft = '8px';
-      clearButton.addEventListener('mouseleave', () => {
-        const iconButton = document.querySelector('.clear-btn-image');
-        iconButton.src = 'images/Clear-All-Icon.png';
-        iconButton.style.width = '35px';
-        iconButton.style.marginLeft = '0px';
-      });
     }else {
       iconButton.src = 'images/red-soul.png';
       iconButton.style.width = '27px';
@@ -370,16 +328,6 @@ const select = document.getElementById('char');
         iconButton.style.width = '35px';
         iconButton.style.marginLeft = '0px';
       });
-    }else if (select.value === 'bloood') {
-      iconButton.src = 'images/sharingan3.png';
-      iconButton.style.width = '27px';
-      iconButton.style.marginLeft = '8px';
-      eraseButton.addEventListener('mouseleave', () => {
-        const iconButton = document.querySelector('.erase-btn-image');
-        iconButton.src = 'images/borracha-laranja.png';
-        iconButton.style.width = '35px';
-        iconButton.style.marginLeft = '0px';
-      });
     }else {
       iconButton.src = 'images/red-soul.png';
       iconButton.style.width = '27px';
@@ -427,16 +375,6 @@ const select = document.getElementById('char');
       });
     }else if (select.value === 'muffet') {
       iconButton.src = 'images/muffet-soul.png';
-      iconButton.style.width = '27px';
-      iconButton.style.marginLeft = '8px';
-      generateBoardButton.addEventListener('mouseleave', () => {
-        const iconButton = document.querySelector('.resize-btn-image');
-        iconButton.src = 'images/resize-icon.png';
-        iconButton.style.width = '35px';
-        iconButton.style.marginLeft = '0px';
-      });
-    }else if (select.value === 'bloood') {
-      iconButton.src = 'images/sharingan3.png';
       iconButton.style.width = '27px';
       iconButton.style.marginLeft = '8px';
       generateBoardButton.addEventListener('mouseleave', () => {
@@ -659,25 +597,7 @@ function theme() {
   audio.volume = 0.1;
   secretBtn.href = 'https://jcw87.github.io/c2-sans-fight/';
   secretBtn.innerText = 'FIGHT SANS';
-}else if (select.value === 'bloood') {
-  secretBtn.href = 'https://www.twitch.tv/blooodrain';
-  secretBtn.innerText = 'TWITCH';
-  image.src = 'images/bloood.gif';
-  image.style.width = '190px'
-  title.style.display = 'none';
-  document.body.style.backgroundColor = 'rgb(173, 62, 62)';
-  logoImage.src = 'images/blood-logo.png'
-  logoImage.style.padding = '2px';
-  imgFakeEraseBtn.src = 'images/sharingan3.png';
-  
-  board.style.cursor = 'url(images/itachi-sharingan.png), auto';
-  if (fakeErase.style.display === 'flex') {
-    board.style.cursor = 'url(images/rubber-icon.png), auto'
-  }
-  audio.src = 'minato-theme.mp3'; 
-  audio.volume = 0.1;
-}
-}
+}}
 
   select.addEventListener('change', theme);
 
@@ -685,9 +605,7 @@ function enableCheat() {
   cheet('↑ ↑ ↓ ↓ ← → ← → b a', () => {
     alert(` Congratulations!\n
     -- Cheat Enabled -- \n
-    Try a Sans fight by clicking FIGHT SANS or 
-    typing 'blood rain' to unlock a new theme.`);
-    cheet('b l o o d r a i n', blooodRainTheme);
+    Try a Sans fight by clicking FIGHT SANS.`);
     papyrusSpeak.src = 'images/papyrus-speak-2.png';
     const sansFightBtn = document.createElement('a');
     sansFightBtn.href ='https://jcw87.github.io/c2-sans-fight/';
@@ -706,5 +624,3 @@ window.onload = function main () {
   generateBoardByInputNumber(12);
   enableCheat();
 }
-
-
